@@ -47,8 +47,10 @@ export class TodayPlayers {
       this.element.appendChild(player.element);
       player.addEventListener("toggle", async (event) => {
         const { id, attendance } = event.currentTarget;
-        await updatePlayerAttendance(id, !attendance);
-        this.refresh();
+        const entry = await updatePlayerAttendance(id, !attendance);
+        if (entry) {
+          this.refresh();
+        }
       });
       return player;
     });

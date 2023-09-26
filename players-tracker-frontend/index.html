@@ -6,14 +6,30 @@
     <title>Players Tracker</title>
   </head>
   <body>
+    <dialog class="dialog" id="add-player-dialog">
+      <div class="dialog-content">
+        <h2>Ajouter un joueur</h2>
+        <form id="add-player-form">
+          <span class="input-name">
+            <input type="text" name="firstName" placeholder="Prénom" />
+            <input type="text" name="lastName" placeholder="Nom" />
+          </span>
+          <button type="Submit">Ajouter</button>
+        </form>
+
+        <form method="dialog">
+          <button type="submit" class="close-button">X</button>
+        </form>
+      </div>
+    </dialog>
     <div id="app">
       <h1>U18 - CS Ternes</h1>
 
       <div id="today-players" class="players">
-        <p>Loading...</p>
+        <p>Chargement...</p>
       </div>
 
-      <!-- <button id="add-new-player">Add new player</button> -->
+      <button id="add-new-player">Ajouter</button>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
